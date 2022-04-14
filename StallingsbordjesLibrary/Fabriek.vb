@@ -9,23 +9,24 @@ MustInherit Class Fabriek
         Protected Const SCHEIDINGSTEKEN = ";" ' TODO
         Protected Taal As Regex
     End Class
-    Class LoodsFabriek
-        Inherits Fabriek
-        Sub New()
-            Taal = New Regex("^""(\d\d)-\d\d(-\d)?"";[^;]*;[^;]*;[^;]*;[^;]*$")
-        End Sub
-        Function Maak(regel As String) As Object
-            Dim loods As New Loods
-            Dim woord As GroupCollection = Taal.Match(regel).Groups
-            If woord.Count > 1 Then
-                loods.Nummer = woord.Item(1).Value
-            Else
-                Throw New RegelException("Een loodsnummer kon niet worden bepaald uit '" & regel & "'.")
-            End If
-            Return loods
-        End Function
-    End Class
-    Class LigplaatsFabriek
+Class LoodsFabriek
+    Inherits Fabriek
+    Sub New()
+        Taal = New Regex("^""(\d\d)-\d\d(-\d)?"";[^;]*;[^;]*;[^;]*;[^;]*$")
+    End Sub
+    Function Maak(regel As String) As Object
+        Dim loods As New Loods
+        Dim woord As GroupCollection = Taal.Match(regel).Groups
+
+        If woord.Count > 1 Then
+            loods.Nummer = woord.Item(1).Value
+        Else
+            Throw New RegelException("Een loodsnummer kon niet worden bepaald uit '" & regel & "'.")
+        End If
+        Return loods
+    End Function
+End Class
+Class LigplaatsFabriek
         Inherits Fabriek
         Sub New()
             Taal = New Regex("^""\d\d-(\d)(\d)(-\d)?"";[^;]*;[^;]*;[^;]*;[^;]*$")

@@ -81,6 +81,9 @@ Public Class Ligplaats
     Sub New(loods As Loods)
         Me.Loods = loods
     End Sub
+    Overrides Function ToString() As String
+        Return $"{Loods.Nummer:00}-{Rij}{Kolom}"
+    End Function
 End Class
 Public Class Boot
     Public Lid As Lid
