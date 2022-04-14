@@ -29,6 +29,7 @@ Gegeven een programmabibliotheek kunnen voor verschillende uitvoeringen gekozen 
 * De wizard kan mooier opgelost worden met een panelwaarop de _controls_ steeds wisselen. Gekozen is voor een oplossing van drie aparte formulieren die elkaar tonen/ verbergen.
 * In het model is omwille van eenvoud afgezien van encapsulatie van eigenschappen. 
 * Omdat de software sterk afhankelijk is van de structuur van het CSV-bestand moet nog een controle worden toegevoegd die de gebruiker waarschuwt als die structuur niet aan de verwachting voldoet.
+* Als de gebruiker een van de vensters van de wizard sluit met het kruisje rechtsboven, dan verdwijnt de applicatie uit de focus, maar wordt niet afgesloten. 
 
 ## Starten
 Start de wizard en kies het bestand Voorbeeld.csv uit dat project. 
