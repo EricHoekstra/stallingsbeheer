@@ -7,9 +7,14 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "StallingsbordjesLibrary", "
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "StallingsbordjesWizard", "StallingsbordjesWizard\StallingsbordjesWizard.vbproj", "{6E292FB8-6529-4E03-A758-F3B0DC70C6C2}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LibraryTest", "LibraryTest\LibraryTest.vbproj", "{15536D26-142E-4ADC-A133-00D1BC02D672}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "LibraryTest", "LibraryTest\LibraryTest.vbproj", "{15536D26-142E-4ADC-A133-00D1BC02D672}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "StallingsbordjesNifi", "StallingsbordjesNifi\StallingsbordjesNifi.shproj", "{159284F8-D295-4291-A273-EE49B7368C87}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		StallingsbordjesNifi\StallingsbordjesNifi.projitems*{159284f8-d295-4291-a273-ee49b7368c87}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
