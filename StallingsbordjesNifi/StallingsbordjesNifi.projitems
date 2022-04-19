@@ -9,6 +9,7 @@
     <Import_RootNamespace>StallingsbordjesNifi</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Stallingsbordjes.html" />
     <Content Include="$(MSBuildThisFileDirectory)Stallingsbordjes.xml" />
   </ItemGroup>
   <ItemGroup>
