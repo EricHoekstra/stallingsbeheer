@@ -11,6 +11,11 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "LibraryTest", "LibraryTest\
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "StallingsbordjesNifi", "StallingsbordjesNifi\StallingsbordjesNifi.shproj", "{159284F8-D295-4291-A273-EE49B7368C87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E616E0D1-8E70-4E01-9072-8A84E879D181}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		StallingsbordjesNifi\StallingsbordjesNifi.projitems*{159284f8-d295-4291-a273-ee49b7368c87}*SharedItemsImports = 13
