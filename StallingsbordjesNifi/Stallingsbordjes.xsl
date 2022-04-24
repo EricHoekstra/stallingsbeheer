@@ -5,68 +5,35 @@
 	<xsl:output method="xml" indent="yes" media-type="text/html" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" omit-xml-declaration="yes" />
 
 	<xsl:template match="planningen">
-
 		<html>
 			<body style='font-family: Helvetica Neue Std, Helvetica, Sans Serif; font-size: 11pt; line-height: 14pt'>
 				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">01</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">02</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">03</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">04</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">05</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">06</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">07</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">08</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">09</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">10</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">11</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">12</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">13</xsl:with-param>
-				</xsl:call-template>
-				<xsl:call-template name="bordje">
-					<xsl:with-param name="loodsnummer">14</xsl:with-param>
+					<xsl:with-param name="loodsnummer">1</xsl:with-param>
 				</xsl:call-template>
 			</body>
 		</html>
 	</xsl:template>
 
 	<xsl:template name="bordje">
-		<xsl:param name="loodsnummer">99</xsl:param>
+		<xsl:param name="loodsnummer"/>
 		<xsl:message>
 			Start van het maken van bordje van loodsnummer '<xsl:value-of select="$loodsnummer"/>'.
 		</xsl:message>
 		<div style="background-color: lightgrey; display: grid; grid-template-columns: repeat(auto-fill, min-content); grid-template-rows: repeat(6, 1fr); grid-gap: 5px;">
-			<xsl:for-each select="planning/Ligplaats[substring(.,1,2)=$loodsnummer]">
+			<xsl:for-each select="planning/Ligplaats[substring(.,1,2)=format-number($loodsnummer, '00')]">
 				<xsl:apply-templates select=".."/>
 			</xsl:for-each>
 		</div>
 		<div style='font-weight: bold; text-align: center; margin-top: 5px; page-break-after: always; '>
 			Loods <xsl:value-of select="$loodsnummer"/>
 		</div>
+		<xsl:if test="$loodsnummer &lt; 14">
+			<xsl:call-template name="bordje">
+				<xsl:with-param name="loodsnummer">
+					<xsl:value-of select="$loodsnummer + 1"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="planning">
