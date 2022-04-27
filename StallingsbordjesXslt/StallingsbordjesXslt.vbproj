@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>StallingsbordjesXslt</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Planningen.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Planningen.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Stallingsbordjes.xsl">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

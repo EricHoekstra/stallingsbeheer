@@ -9,13 +9,12 @@
     <Import_RootNamespace>StallingsbordjesNifi</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Loodsen.xml" />
-    <Content Include="$(MSBuildThisFileDirectory)Stallingsbordjes-referentie.html" />
     <Content Include="$(MSBuildThisFileDirectory)Stallingsbordjes.html" />
     <Content Include="$(MSBuildThisFileDirectory)Planningen.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)README.md" />
+    <None Include="$(MSBuildThisFileDirectory)Stallingsbordjes.csv" />
     <None Include="$(MSBuildThisFileDirectory)Stallingsbordjes.xsl">
       <SubType>Designer</SubType>
     </None>
